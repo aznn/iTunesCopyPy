@@ -73,10 +73,10 @@ def runScript():
 
     movePlaylist(itunes, **args)
 
-"""
+
 if __name__ == "__main__":
     runScript()
 
-"""
 
-runScript()
+
+#runScript()
