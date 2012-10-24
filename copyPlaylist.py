@@ -41,32 +41,38 @@ def movePlaylist(itunes, playlist, dir):
 
         os.makedirs(dir)
 
-    failed = []
-    success = 0
+    fail = 0
+    move = 0
+    skip = 0
     for track in playlist.Tracks:
         trackPath = track.Location
         filename = os.path.basename(trackPath)
-        copyPath = dir
+        copyPath = dir + filename
         
+        if os.path.isfile(copyPath):
+            skip += 1
+            continue
+
         copy = [
                 'copy',
                 trackPath,
-                copyPath
+                dir
             ]
 
         devnull = open('/dev/null', 'w')
         subprocess.call(copy, shell=True, stdout=devnull)
 
-        if os.path.isfile(copyPath + filename):
+        if os.path.isfile(copyPath):
             print 'Success : %s' % filename
-            success += 1
+            move += 1
         else:
             print 'Failed : %s' % filename
-            failed.append(track)
+            fail += 1
 
-    fail = len(failed)
-    if fail: print '\n%d Failed!' % fail
-    else: print '\%d Files successfully copied!' % success
+
+    print '\n%d Successful' % move
+    print '%d Skipped' % skip
+    print '%d Failed' % fail
 
 
 def runScript():

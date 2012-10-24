@@ -28,6 +28,9 @@ local.properties
 # PDT-specific
 .buildpath
 
+build/
+dist/
+setup.py
 
 #################
 ## Visual Studio
@@ -40,6 +43,8 @@ local.properties
 *.suo
 *.user
 *.sln.docstates
+*.pyproj
+*.sln
 
 # Build results
 [Dd]ebug/
