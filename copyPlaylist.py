@@ -50,6 +50,7 @@ def movePlaylist(itunes, playlist, dir):
         copyPath = dir + filename
         
         if os.path.isfile(copyPath):
+            print 'Skipped : %s' % filename
             skip += 1
             continue
 
