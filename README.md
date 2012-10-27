@@ -1,5 +1,14 @@
-A small python script which can be used to copy your itunes playlist into a directory
+####Summary
+A small python script which can be used to copy your itunes playlist into a specified directory
 
-This is useful if you want to copy your itunes playlist to your android phone, but dont
-want to pay for software to do this. Just run the script and copy the playlist you want
-to a folder in the android mmc
+####Description
+You can use this python script to copy the mp3 files of the songs in a selected iTunes playlist. This is quite handy
+if you need to make a backup of only the songs in a specific playlist, or say move your playlist to a mmc (like Android).
+
+The script uses the iTunes COM API to automate iTunes. 
+
+####Modules used
+- pywin32 [http://sourceforge.net/projects/pywin32/]
+
+#####Note
+The file **downloadEXE.rar** has a native windows version of the script, built with py2exe. 
